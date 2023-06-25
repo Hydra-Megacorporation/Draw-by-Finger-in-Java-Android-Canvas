@@ -9,11 +9,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.util.*;
 
-public class HydraDrawer extends View {
+public class HydraDrawer extends View
+{
     private Paint paint;
     private Path path;
 
-    public HydraDrawer(Context context) {
+    public HydraDrawer(Context context)
+	{
         super(context);
         paint = new Paint();
         paint.setColor(Color.BLACK);
@@ -21,9 +23,10 @@ public class HydraDrawer extends View {
         paint.setStrokeWidth(5);
         path = new Path();
     }
-	
-	public HydraDrawer(Context context,AttributeSet attributeSet) {
-        super(context,attributeSet);
+
+	public HydraDrawer(Context context, AttributeSet attributeSet)
+	{
+        super(context, attributeSet);
         paint = new Paint();
         paint.setColor(Color.WHITE);
         paint.setStyle(Paint.Style.STROKE);
@@ -31,18 +34,21 @@ public class HydraDrawer extends View {
         path = new Path();
     }
     @Override
-    protected void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas)
+	{
         super.onDraw(canvas);
 		canvas.drawColor(Color.BLACK);
         canvas.drawPath(path, paint);
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
+    public boolean onTouchEvent(MotionEvent event)
+	{
         float x = event.getX();
         float y = event.getY();
 
-        switch (event.getAction()) {
+        switch (event.getAction())
+		{
             case MotionEvent.ACTION_DOWN:
                 path.moveTo(x, y);
                 return true;
@@ -56,4 +62,3 @@ public class HydraDrawer extends View {
         return true;
     }
 }
-

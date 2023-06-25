@@ -7,13 +7,13 @@ import android.view.*;
 public class MainActivity extends Activity
 {
 	private HydraDrawer hydraDrawer;
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+	@Override
+	protected void onCreate(Bundle savedInstanceState)
+	{
+		super.onCreate(savedInstanceState);
 		hydraDrawer=new HydraDrawer(this);
-    }
+		setContentView(hydraDrawer);
+	}
 	@Override
 	public boolean onTouchEvent(MotionEvent event)
 	{
